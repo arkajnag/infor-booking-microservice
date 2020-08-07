@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.13.0.final using JasperReports Library version 6.13.0-46ada4d1be8f3c5985fd0b6146f3ed44caed6f05  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Bookings" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7a5c9b49-9dc5-422a-ac69-e92cf61ef530">
+    <style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false"/>
+    <style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false"/>
+    <style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+    <style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+    <style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+            <style mode="Opaque" backcolor="#F0EFEF"/>
+        </conditionalStyle>
+    </style>
+    <field name="bookingId" class="java.lang.Integer">
+    </field>
+    <field name="carPlateNumber" class="java.lang.Integer">
+    </field>
+    <field name="userId" class="java.lang.Integer">
+    </field>
+    <field name="bookingStartDate" class="java.time.LocalDateTime">
+    </field>
+    <field name="bookingEndDate" class="java.time.LocalDateTime">
+    </field>
+    <field name="bookingTime" class="java.time.LocalDateTime">
+    </field>
+    <field name="bookingAmount" class="java.lang.Double">
+    </field>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="102" splitType="Stretch">
+            <frame>
+                <reportElement mode="Opaque" x="0" y="0" width="721" height="66" backcolor="#000000" uuid="d8d9e644-3a32-491d-97cb-a277aff17133"/>
+                <staticText>
+                    <reportElement style="Title" x="0" y="0" width="360" height="66" uuid="27d8f6ee-f0a9-44f6-a160-1763c3b00f30"/>
+                    <box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
+                    <textElement verticalAlignment="Bottom">
+                        <font isBold="false"/>
+                    </textElement>
+                    <text><![CDATA[Car Rental Service]]></text>
+                </staticText>
+                <staticText>
+                    <reportElement style="SubTitle" x="370" y="37" width="316" height="29" uuid="cfa21334-0634-4605-9ea7-aca4981f67e4"/>
+                    <textElement textAlignment="Right">
+                        <font size="22" isBold="false"/>
+                    </textElement>
+                    <text><![CDATA[Booking Report]]></text>
+                </staticText>
+            </frame>
+            <frame>
+                <reportElement mode="Opaque" x="0" y="70" width="721" height="32" forecolor="#000000" backcolor="#CC0000" uuid="b0c895f6-6dbd-477d-9858-9ad66af087e1"/>
+                <textField pattern="EEEEE dd MMMMM yyyy">
+                    <reportElement x="553" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="a33fce3b-20c1-4696-873a-fe134d1e7d88"/>
+                    <textElement textAlignment="Right">
+                        <font size="12"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+                </textField>
+            </frame>
+        </band>
+    </title>
+    <pageHeader>
+        <band splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band height="18" splitType="Stretch">
+            <staticText>
+                <reportElement style="Column header" x="0" y="0" width="113" height="18" forecolor="#000000" uuid="42c651f7-603d-48b6-b7eb-e230e66b45fe">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4ce2c474-fc86-4f3a-8874-6dc82cb94f55"/>
+                </reportElement>
+                <textElement>
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[Booking ID]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Column header" x="113" y="0" width="113" height="18" forecolor="#000000" uuid="be12ce50-6e48-4457-b752-c1ba0cc12a6e">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="37a3defe-e1ad-4de5-aac6-76487945a0ac"/>
+                </reportElement>
+                <textElement>
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[Car PlateNumber]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Column header" x="226" y="0" width="113" height="18" forecolor="#000000" uuid="ae7cfbcf-89b0-4abb-a247-3d08f8d651d6">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5e984c31-83b3-4b70-bff6-b8a0c32ff976"/>
+                </reportElement>
+                <textElement>
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[User ID]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Column header" x="339" y="0" width="113" height="18" forecolor="#000000" uuid="6375e68e-bd80-419f-857d-c6dd0488c84d">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="059863bc-14fb-461f-934d-94b09544edc9"/>
+                </reportElement>
+                <textElement>
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[Start Date]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Column header" x="452" y="0" width="113" height="18" forecolor="#000000" uuid="e9357021-c297-4250-8b0b-410ca6711999">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4ec4c0f4-a672-42d3-bded-0ade1d450a23"/>
+                </reportElement>
+                <textElement>
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[End Date]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Column header" x="565" y="0" width="113" height="18" forecolor="#000000" uuid="9c2268dd-b845-41cc-a029-6b5aea2541a1">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e24f23c5-ed32-45b0-8ff6-fa26164cd28d"/>
+                </reportElement>
+                <textElement>
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[Booking Time]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Column header" x="678" y="0" width="113" height="18" forecolor="#000000" uuid="50a9d010-a98a-47c4-8238-fddbaaa79a52">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ad206e22-eccc-4c5b-94a4-c05667b0d232"/>
+                </reportElement>
+                <textElement>
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[Booking Amount]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="18" splitType="Stretch">
+            <frame>
+                <reportElement style="Row" mode="Opaque" x="0" y="0" width="797" height="18" uuid="34a2ae4b-4055-476b-8676-d499f6af510b"/>
+                <textField textAdjust="StretchHeight">
+                    <reportElement style="Detail" positionType="Float" x="0" y="0" width="113" height="18" uuid="70b06715-48e6-484e-b77f-cff73552c79a">
+                        <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4ce2c474-fc86-4f3a-8874-6dc82cb94f55"/>
+                    </reportElement>
+                    <textElement>
+                        <font size="14"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{bookingId}]]></textFieldExpression>
+                </textField>
+                <textField textAdjust="StretchHeight">
+                    <reportElement style="Detail" positionType="Float" x="113" y="0" width="113" height="18" uuid="533298d7-f59e-4a8c-ada3-c8d3ceacac6f">
+                        <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="37a3defe-e1ad-4de5-aac6-76487945a0ac"/>
+                    </reportElement>
+                    <textElement>
+                        <font size="14"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{carPlateNumber}]]></textFieldExpression>
+                </textField>
+                <textField textAdjust="StretchHeight">
+                    <reportElement style="Detail" positionType="Float" x="226" y="0" width="113" height="18" uuid="e328f9d9-1ec3-4da2-bac1-80c278f9b13e">
+                        <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5e984c31-83b3-4b70-bff6-b8a0c32ff976"/>
+                    </reportElement>
+                    <textElement>
+                        <font size="14"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{userId}]]></textFieldExpression>
+                </textField>
+                <textField textAdjust="StretchHeight">
+                    <reportElement style="Detail" positionType="Float" x="339" y="0" width="113" height="18" uuid="9dd59652-6ad2-4fa3-93c2-1bbab4b6e7a7">
+                        <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="059863bc-14fb-461f-934d-94b09544edc9"/>
+                    </reportElement>
+                    <textElement>
+                        <font size="14"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{bookingStartDate}]]></textFieldExpression>
+                </textField>
+                <textField textAdjust="StretchHeight">
+                    <reportElement style="Detail" positionType="Float" x="452" y="0" width="113" height="18" uuid="1a86a488-c5ec-4d70-b01f-fc5ece52bce9">
+                        <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4ec4c0f4-a672-42d3-bded-0ade1d450a23"/>
+                    </reportElement>
+                    <textElement>
+                        <font size="14"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{bookingEndDate}]]></textFieldExpression>
+                </textField>
+                <textField textAdjust="StretchHeight">
+                    <reportElement style="Detail" positionType="Float" x="565" y="0" width="113" height="18" uuid="6c36826a-5fbd-40e7-9a35-b0891a2947f2">
+                        <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e24f23c5-ed32-45b0-8ff6-fa26164cd28d"/>
+                    </reportElement>
+                    <textElement>
+                        <font size="14"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{bookingTime}]]></textFieldExpression>
+                </textField>
+                <textField textAdjust="StretchHeight">
+                    <reportElement style="Detail" positionType="Float" x="678" y="0" width="113" height="18" uuid="1283b4d7-8401-46ce-be78-1899211bb91c">
+                        <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ad206e22-eccc-4c5b-94a4-c05667b0d232"/>
+                    </reportElement>
+                    <textElement>
+                        <font size="14"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{bookingAmount}]]></textFieldExpression>
+                </textField>
+            </frame>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="7" splitType="Stretch">
+            <line>
+                <reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="501ac6c4-e9d4-43cb-ba6b-7f2f44394cf3"/>
+                <graphicElement>
+                    <pen lineWidth="0.5" lineColor="#999999"/>
+                </graphicElement>
+            </line>
+        </band>
+    </columnFooter>
+    <pageFooter>
+        <band height="25" splitType="Stretch">
+            <frame>
+                <reportElement mode="Opaque" x="0" y="0" width="802" height="25" forecolor="#D0B48E" backcolor="#000000" uuid="ffb10ec8-0371-4545-8eaa-96d62ad3cec0"/>
+                <textField evaluationTime="Report">
+                    <reportElement style="Column header" x="757" y="3" width="40" height="20" forecolor="#FFFFFF" uuid="b5521ea6-5f36-4864-856f-58d0bcd011f2"/>
+                    <textElement verticalAlignment="Middle">
+                        <font size="10" isBold="false"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement style="Column header" x="677" y="3" width="80" height="20" forecolor="#FFFFFF" uuid="e625ea3c-1741-4cfe-81cf-fbbdd00162c8"/>
+                    <textElement textAlignment="Right" verticalAlignment="Middle">
+                        <font size="10" isBold="false"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+                </textField>
+                <textField pattern="EEEEE dd MMMMM yyyy">
+                    <reportElement style="Column header" x="2" y="3" width="197" height="20" forecolor="#FFFFFF" uuid="0c9f7e91-d3f5-47f9-82b7-0b2b3a43a5d6"/>
+                    <textElement verticalAlignment="Middle">
+                        <font size="10" isBold="false"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+                </textField>
+            </frame>
+        </band>
+    </pageFooter>
+    <summary>
+        <band splitType="Stretch"/>
+    </summary>
+</jasperReport>
