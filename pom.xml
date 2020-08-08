@@ -12,8 +12,8 @@
 	<groupId>io.arkajnag</groupId>
 	<artifactId>demo-carbooking-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo-carbooking-service</name>
-	<description>Demo project for Spring Boot For Car Booking</description>
+	<name>infor-carbooking-service</name>
+	<description>Infor Car Rental Protal project for Spring Boot For Car Booking</description>
 
 	<properties>
 		<java.version>1.8</java.version>
